@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="methods">
+    <test name="Test" parallel="methods" thread-count="2">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="resolution" value="1024x768"/>
+        <classes>
+            <class name="SubscribeWithInvalidEmailTest"/>
+            <class name="CheckLanguagesTest"/>
+            <!--            <class name="RegistrationNegativeScenarioTest"/>-->
+            <!--            <class name="RegistrationPositiveScenarioTest"/>-->
+            <!--            <class name="CheckCategoriesTest"/>-->
+        </classes>
+    </test>
+</suite>
