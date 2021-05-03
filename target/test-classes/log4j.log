@@ -245,3 +245,19 @@
 [INFO ] 2021-05-04 00:21:35 MainPage:88 :setEmail - message:Enter the ttt@ttt into email address input field
 [INFO ] 2021-05-04 00:21:36 MainPage:94 :clickOnSubscribeButton - message:Clicking on the Subscribe button
 [INFO ] 2021-05-04 00:21:36 MainPage:100 :getTextFromPopUpErrorMessage - message:Getting text from the pop-up error message
+[INFO ] 2021-05-04 00:23:24 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-04 00:23:24 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-04 00:23:32 MainPage:76 :goToFrame - message:Switching to the separate page frame
+[INFO ] 2021-05-04 00:23:32 MainPage:69 :scrollToElement - message:Scroll to email address input element on the main page
+[INFO ] 2021-05-04 00:23:40 MainPage:82 :clickOnEmailAddressInput - message:Clicking on the email address input element
+[INFO ] 2021-05-04 00:23:40 MainPage:88 :setEmail - message:Enter the ttt@ttt into email address input field
+[INFO ] 2021-05-04 00:23:41 MainPage:94 :clickOnSubscribeButton - message:Clicking on the Subscribe button
+[INFO ] 2021-05-04 00:23:41 MainPage:100 :getTextFromPopUpErrorMessage - message:Getting text from the pop-up error message
+[INFO ] 2021-05-04 00:48:07 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-04 00:48:07 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-04 00:48:13 MainPage:76 :goToFrame - message:Switching to the separate page frame
+[INFO ] 2021-05-04 00:48:13 MainPage:69 :scrollToElement - message:Scroll to email address input element on the main page
+[INFO ] 2021-05-04 00:48:22 MainPage:82 :clickOnEmailAddressInput - message:Clicking on the email address input element
+[INFO ] 2021-05-04 00:48:22 MainPage:88 :setEmail - message:Enter the ttt@ttt into email address input field
+[INFO ] 2021-05-04 00:48:22 MainPage:94 :clickOnSubscribeButton - message:Clicking on the Subscribe button
+[INFO ] 2021-05-04 00:48:23 MainPage:100 :getTextFromPopUpErrorMessage - message:Getting text from the pop-up error message

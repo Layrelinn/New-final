@@ -103,16 +103,19 @@ public class MainPage extends BasePage {
     }
 
     public MainPage clickOnLanguagesDropdown() {
+        log.info("Clicking on the languages dropdown to open the list");
         expandLanguagesDropdownButton.click();
         return this;
     }
 
     public Integer getAllLanguagesCountFromDropdown() {
+        log.info("Getting size of the list of languages from the dropdown");
         return listOfLanguagesInDropdown.size();
 
     }
 
     public List<String> findLanguages() {
+        log.info("Checking the list on presence of the specific language");
         List<String> presenceLanguage = new ArrayList<>();
         for (WebElement language : listOfLanguagesInDropdown) {
             presenceLanguage.add(language.getText());
@@ -121,6 +124,7 @@ public class MainPage extends BasePage {
     }
 
     public LogInPage clickOnSignInButton() {
+        log.info("Click on the sign-in button to confirm registration");
         signInButton.click();
         return new LogInPage();
     }
