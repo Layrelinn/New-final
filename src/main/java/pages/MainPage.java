@@ -1,5 +1,6 @@
 package pages;
 
+import blocks.PopularProducts;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -59,6 +60,15 @@ public class MainPage extends BasePage {
 
     @FindBy(xpath = "//li[@id='category-9']//li")
     private List<WebElement> artSubCategories;
+
+    @FindBy(xpath = "//div[@class='products row']//div[@class='product']")
+    private List<WebElement> popularProductsList;
+
+    @FindBy(xpath = "//div[@class='products row']//a[@itemprop='url']")
+    private List<WebElement> popularProductsName;
+
+    @FindBy(xpath = "//div[@class='products row']//span[@class='price']")
+    private List<WebElement> popularProductsPrice;
 
 
     public MainPage() {
@@ -169,6 +179,35 @@ public class MainPage extends BasePage {
 
     public boolean isAnySubCategoriesAppears() {
         return artSubCategories.size() != 0;
+    }
+
+    public Integer getPopularProductsSize() {
+        return popularProductsList.size();
+    }
+
+    public boolean havePopularProductsNameFields() {
+        List<String> names = new ArrayList<>();
+        for (WebElement e : popularProductsName) {
+            names.add(e.getText());
+        }
+        return names.size() == popularProductsList.size();
+    }
+
+    public boolean havePopularProductsPriceFields() {
+        List<String> prices = new ArrayList<>();
+        for (WebElement e : popularProductsName) {
+            prices.add(e.getText());
+        }
+        return prices.size() == popularProductsList.size();
+    }
+
+    public List<String> arePopularProductsPriceBiggerThanZero() {
+        List<String> prices = new ArrayList<>();
+        for (WebElement e : popularProductsName) {
+            prices.add(e.getText());
+        }
+        return prices;
+
     }
 
 }
