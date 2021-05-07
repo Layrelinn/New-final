@@ -1,6 +1,5 @@
 package pages;
 
-import blocks.PopularProducts;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;

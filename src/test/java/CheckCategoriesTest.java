@@ -5,7 +5,7 @@ import pages.MainPage;
 public class CheckCategoriesTest extends BaseTest {
 
     @Test
-    public void CheckCategories() {
+    public void checkCategories() {
 
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();

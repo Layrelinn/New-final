@@ -4,12 +4,10 @@ import pages.MainPage;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class CheckPopularProductsTest extends BaseTest {
 
     @Test
-    public void CheckPopularProducts() {
+    public void checkPopularProducts() {
 
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();

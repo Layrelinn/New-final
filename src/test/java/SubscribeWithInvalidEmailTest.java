@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SubscribeWithInvalidEmailTest extends BaseTest {
 
     @Test
-    public void SubscribeWithInvalidEmail() throws InterruptedException {
+    public void subscribeWithInvalidEmail() throws InterruptedException {
 
         MainPage mainPage = new MainPage();
 

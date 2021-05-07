@@ -40,7 +40,7 @@ public class BaseTest {
 
         driver.manage().window().maximize();
         driver.get("https://demo.prestashop.com/");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         BasePage.setDriverThreadLocal(driver);
     }
 

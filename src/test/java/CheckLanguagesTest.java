@@ -8,7 +8,7 @@ import java.util.List;
 public class CheckLanguagesTest extends BaseTest {
 
     @Test
-    public void CheckLanguages() {
+    public void checkLanguages() {
 
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
