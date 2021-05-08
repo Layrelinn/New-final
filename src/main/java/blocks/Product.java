@@ -10,7 +10,6 @@ public class Product {
 
     public String productName;
     public Double regularPrice;
-    //public Double discountPrice;
     public WebElement productNameWE;
     public WebElement regularPriceWE;
 

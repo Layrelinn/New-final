@@ -30,5 +30,4 @@ public class CheckLanguagesTest extends BaseTest {
         sa.assertAll();
 
     }
-
 }

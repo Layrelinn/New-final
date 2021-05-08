@@ -7,8 +7,6 @@ public class CheckCategoriesTest extends BaseTest {
     @Test
     public void checkCategories() {
 
-        //TODO add switch case and remove duplicate methods and locators
-
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
