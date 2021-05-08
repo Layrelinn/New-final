@@ -19,7 +19,7 @@ public class RegistrationPositiveScenarioTest extends BaseTest {
                         .clickOnSignInButton()
                         .clickOnCreateAccountLink()
                         .clickOnSocialTitleRadioButton()
-                        .enterFirstName(name)
+                        .enterFirstName()
                         .enterLastName()
                         .enterEmailAddress()
                         .enterPassword()

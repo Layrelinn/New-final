@@ -10,7 +10,7 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="resolution" value="1024x768"/>
         <classes>
-<!--            <class name="SubscribeWithInvalidEmailTest"/>-->
+            <!--            <class name="SubscribeWithInvalidEmailTest"/>-->
             <class name="CheckLanguagesTest"/>
             <!--            <class name="RegistrationNegativeScenarioTest"/>-->
             <!--            <class name="RegistrationPositiveScenarioTest"/>-->

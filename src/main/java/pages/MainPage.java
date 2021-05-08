@@ -76,10 +76,14 @@ public class MainPage extends BasePage {
         PageFactory.initElements(getDriver(), this);
     }
 
-    public MainPage scrollToElement() throws InterruptedException {
+    public MainPage scrollToElement() {
         log.info("Scroll to email address input element on the main page");
         ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", emailAddressInput);
-        Thread.sleep(500);
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         return this;
     }
 
@@ -230,7 +234,7 @@ public class MainPage extends BasePage {
 
     //for popular products
 
-    public List<String> getAllNamesFromProducst(){
+    public List<String> getAllNamesFromProducts() {
         Product product = new Product();
         product.getAllPopularProducts(containers);
     }

@@ -5,19 +5,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SubscribeWithInvalidEmailTest extends BaseTest {
 
-    //TODO remove InterruptedException
-    // TODO move goToFrame to Base Test
+    //TODO remove InterruptedException DONE
+    // TODO move goToFrame to Base Test DONE
 
     @Test
-    public void subscribeWithInvalidEmail() throws InterruptedException {
+    public void subscribeWithInvalidEmail()  {
 
         MainPage mainPage = new MainPage();
+        String emailAddressForSubscribe = "ttt@ttt";
 
         String popUpActualText =
-                mainPage.goToFrame()
-                        .scrollToElement()
+                mainPage.scrollToElement()
                         .clickOnEmailAddressInput()
-                        .setEmail("ttt@ttt")
+                        .setEmail(emailAddressForSubscribe)
                         .clickOnSubscribeButton()
                         .getTextFromPopUpErrorMessage();
 

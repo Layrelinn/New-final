@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import pages.BasePage;
+import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -45,7 +46,10 @@ public abstract class BaseTest {
         driver.get("https://demo.prestashop.com/");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         BasePage.setDriverThreadLocal(driver);
+        driver.switchTo().frame("framelive");
     }
+
+
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
