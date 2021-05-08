@@ -1,6 +1,9 @@
+import blocks.Product;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import pages.MainPage;
+
+import java.util.List;
 
 public class CheckPopularProductsTest extends BaseTest {
 
@@ -17,24 +20,17 @@ public class CheckPopularProductsTest extends BaseTest {
                 .as("Popular products size is not 8!")
                 .isEqualTo(8);
 
-        boolean isProductsHaveNames = mainPage.isEveryProductHasName();
+        List<Product> productCharacteristics = mainPage.getAllPopularProducts();
 
-        sa.assertThat(isProductsHaveNames)
-                .as("Not all popular products has names!")
-                .isTrue();
-
-        boolean isProductsHavePrices =
-                mainPage.isEveryProductHasPrice();
-
-        sa.assertThat(isProductsHavePrices)
-                .as("Not all popular products has prices!")
-                .isTrue();
-
-        boolean areProductPricesGreaterThatZero = mainPage.arePopularProductsPriceBiggerThanZero();
-
-        sa.assertThat(areProductPricesGreaterThatZero)
-                .as("Some popular product prices are >= 0.00")
-                .isTrue();
+        for (Product product : productCharacteristics) {
+            sa.assertThat(product.productNameWE.isDisplayed())
+                    .as("Not all popular products has names!");
+            sa.assertThat(product.regularPriceWE.isDisplayed())
+                    .as("Not all popular products has prices!");
+            double actualPrice = product.regularPrice;
+            sa.assertThat(actualPrice).isGreaterThan(0.00)
+                    .as("Some popular product prices are <= 0.00");
+        }
 
         sa.assertAll();
     }

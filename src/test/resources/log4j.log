@@ -337,3 +337,19 @@
 [INFO ] 2021-05-08 17:25:30 MainPage:115 :clickOnSignInButton - message:Click on the sign-in button to confirm registration
 [INFO ] 2021-05-08 17:26:39 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
 [INFO ] 2021-05-08 17:26:39 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 18:04:39 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 18:04:39 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 20:43:38 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 20:43:39 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 20:44:58 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 20:44:58 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 21:02:23 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 21:02:23 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 21:04:12 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 21:04:12 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 21:05:10 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 21:05:10 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 21:07:16 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 21:07:16 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-08 21:08:21 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-08 21:08:21 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe

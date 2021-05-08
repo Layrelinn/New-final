@@ -12,38 +12,33 @@ public class Product {
     public Double regularPrice;
     //public Double discountPrice;
     public WebElement productNameWE;
-    public WebElement productPriceWE;
+    public WebElement regularPriceWE;
 
     public Product() {
     }
 
     public Product(WebElement container) {
-        // if(container.getAttribute("innerHTML").contains("disconte")){
-        //    this.discountPrice = Double.valueOf(container.findElement(By.xpath(".//x[=pathForPrice")).getText());
-        // }
-        this.productName = container.findElement(By.xpath(".//div[@class='products row']//a[@itemprop='url']")).getText();
+        this.productName = container.findElement(By.xpath(".//a[@itemprop='url']")).getText();
         this.regularPrice = Double.valueOf(container
-                .findElement(By.xpath("//div[@class='products row']//span[@class='price']"))
+                .findElement(By.xpath(".//span[@class='price']"))
                 .getText().replace("€", ""));
-        this.productNameWE = container.findElement(By.xpath(".//div[@class='products row']//a[@itemprop='url']"));
-        this.productPriceWE = container.findElement(By.xpath("//div[@class='products row']//span[@class='price']"));
-
+        this.productNameWE = container.findElement(By.xpath(".//a[@itemprop='url']"));
+        this.regularPriceWE = container.findElement(By.xpath(".//span[@class='price']"));
     }
 
-
-    public int getCountOfAllPopularProducts(List<WebElement> containers) {
-        List<Product> allPopularProducts = new ArrayList<>();
+    public int getCountOfAllProducts(List<WebElement> containers) {
+        List<Product> allProducts = new ArrayList<>();
         for (WebElement container : containers) {
-            allPopularProducts.add(new Product(container));
+            allProducts.add(new Product(container));
         }
-        return allPopularProducts.size();
+        return allProducts.size();
     }
 
-    public List<Product> getAllPopularProducts(List<WebElement> containers) {
-        List<Product> allPopularProducts = new ArrayList<>();
+    public static List<Product> getAllProducts (List<WebElement> containers) {
+        List<Product> allProducts = new ArrayList<>();
         for (WebElement container : containers) {
-            allPopularProducts.add(new Product(container));
+            allProducts.add(new Product(container));
         }
-        return allPopularProducts;
+        return allProducts;
     }
 }

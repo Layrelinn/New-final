@@ -41,15 +41,8 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//li[@id='category-9']//li")
     private List<WebElement> artSubCategories;
 
-    @FindBy(xpath = "//div[@class='products row']//div[@class='product']")
+    @FindBy(xpath = "//div[@itemprop='itemListElement']")
     private List<WebElement> popularProductsContainers;
-
-    @FindBy(xpath = "//div[@class='products row']//a[@itemprop='url']")
-    private List<WebElement> popularProductsName;
-
-    @FindBy(xpath = "//div[@class='products row']//span[@class='price']")
-    private List<WebElement> popularProductsPrice;
-
 
     public MainPage() {
         PageFactory.initElements(getDriver(), this);
@@ -141,7 +134,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public boolean isCategoryDisplaying (String linkName) {
+    public boolean isCategoryDisplaying(String linkName) {
         String categoryId = null;
         switch (linkName) {
             case "MEN":
@@ -167,31 +160,13 @@ public class MainPage extends BasePage {
 
     public int getPopularProductsSize() {
         Product product = new Product();
-        int productsOnPage = product.getCountOfAllPopularProducts(popularProductsContainers);
+        int productsOnPage = product.getCountOfAllProducts(popularProductsContainers);
         return productsOnPage;
     }
 
     public List<Product> getAllPopularProducts() {
         Product product = new Product();
-        List<Product> allProductsOnMainPage = product.getAllPopularProducts(popularProductsContainers);
+        List<Product> allProductsOnMainPage = product.getAllProducts(popularProductsContainers);
         return allProductsOnMainPage;
     }
-
-    public boolean isEveryProductHasName () {
-        Product product = new Product();
-          return product.productNameWE.isDisplayed();
-
-    }
-
-    public boolean isEveryProductHasPrice () {
-        Product product = new Product();
-        return product.productPriceWE.isDisplayed();
-    }
-
-    public boolean arePopularProductsPriceBiggerThanZero() {
-        Product product = new Product();
-        double zero = 0.00;
-        return product.regularPrice > zero;
-    }
-
 }
