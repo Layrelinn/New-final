@@ -48,37 +48,37 @@ public class CreateAnAccountPage extends BasePage {
 
     public CreateAnAccountPage enterFirstName(String name) {
         firstNameInput.click();
-        firstNameInput.sendKeys();
+        firstNameInput.sendKeys(name);
         return this;
     }
 
     public CreateAnAccountPage enterInvalidFirstName(String invalidFirstName) {
         firstNameInput.click();
-        firstNameInput.sendKeys();
+        firstNameInput.sendKeys(invalidFirstName);
         return this;
     }
 
     public CreateAnAccountPage enterLastName(String lastName) {
         lastNameInput.click();
-        lastNameInput.sendKeys();
+        lastNameInput.sendKeys(lastName);
         return this;
     }
 
     public CreateAnAccountPage enterEmailAddress(String emailAddress) {
         emailAddressInput.click();
-        emailAddressInput.sendKeys();
+        emailAddressInput.sendKeys(emailAddress);
         return this;
     }
 
     public CreateAnAccountPage enterPassword(String password) {
         passwordInput.click();
-        passwordInput.sendKeys();
+        passwordInput.sendKeys(password);
         return this;
     }
 
     public CreateAnAccountPage enterBirthdayDate(String birthdayDate) {
         birthdayDateInput.click();
-        birthdayDateInput.sendKeys();
+        birthdayDateInput.sendKeys(birthdayDate);
         return this;
     }
 

@@ -8,26 +8,42 @@ import java.util.List;
 
 public class Product {
 
-    String name;
-    WebElement image;
-    Double discountPrice;
-
-    public Product(WebElement container) {
-        if(container.getAttribute("innerHTML").contains("disconte")){
-            this.discountPrice = Double.valueOf(container.findElement(By.xpath(".//x[=pathForPrice")).getText());
-        }
-        this.name = container.findElement(By.xpath(".//x[=pathForName")).getText();
-        this.image = container.findElement(By.xpath(".//x[=pathForName"));
-    }
+    public String productName;
+    public Double regularPrice;
+    //public Double discountPrice;
+    public WebElement productNameWE;
+    public WebElement productPriceWE;
 
     public Product() {
     }
 
-    public List<Product> getAllPopularProducts(List<WebElement> containers) { //containers shoud have 8 lements
-        List<Product> popularProducts = new ArrayList<>();
+    public Product(WebElement container) {
+        // if(container.getAttribute("innerHTML").contains("disconte")){
+        //    this.discountPrice = Double.valueOf(container.findElement(By.xpath(".//x[=pathForPrice")).getText());
+        // }
+        this.productName = container.findElement(By.xpath(".//div[@class='products row']//a[@itemprop='url']")).getText();
+        this.regularPrice = Double.valueOf(container
+                .findElement(By.xpath("//div[@class='products row']//span[@class='price']"))
+                .getText().replace("€", ""));
+        this.productNameWE = container.findElement(By.xpath(".//div[@class='products row']//a[@itemprop='url']"));
+        this.productPriceWE = container.findElement(By.xpath("//div[@class='products row']//span[@class='price']"));
+
+    }
+
+
+    public int getCountOfAllPopularProducts(List<WebElement> containers) {
+        List<Product> allPopularProducts = new ArrayList<>();
         for (WebElement container : containers) {
-            popularProducts.add(new Product(container));
+            allPopularProducts.add(new Product(container));
         }
-        return popularProducts;
+        return allPopularProducts.size();
+    }
+
+    public List<Product> getAllPopularProducts(List<WebElement> containers) {
+        List<Product> allPopularProducts = new ArrayList<>();
+        for (WebElement container : containers) {
+            allPopularProducts.add(new Product(container));
+        }
+        return allPopularProducts;
     }
 }

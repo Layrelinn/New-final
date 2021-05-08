@@ -1,10 +1,6 @@
-import blocks.Product;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import pages.MainPage;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CheckPopularProductsTest extends BaseTest {
 
@@ -14,41 +10,31 @@ public class CheckPopularProductsTest extends BaseTest {
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
-        //TODO use priimitives instead of objects
         int actualPopularProductsSize =
-                mainPage.goToFrame()
-                        .getPopularProductsSize();
-
+                mainPage.getPopularProductsSize();
 
         sa.assertThat(actualPopularProductsSize)
                 .as("Popular products size is not 8!")
                 .isEqualTo(8);
 
+        boolean isProductsHaveNames = mainPage.isEveryProductHasName();
 
-        Boolean actualPopularProductsName =
-                mainPage.havePopularProductsNameFields();
-
-
-
-        sa.assertThat(actualPopularProductsName)
+        sa.assertThat(isProductsHaveNames)
                 .as("Not all popular products has names!")
                 .isTrue();
 
+        boolean isProductsHavePrices =
+                mainPage.isEveryProductHasPrice();
 
-        Boolean actualPopularProductsPrice =
-                mainPage.havePopularProductsPriceFields();
-
-        sa.assertThat(actualPopularProductsPrice)
+        sa.assertThat(isProductsHavePrices)
                 .as("Not all popular products has prices!")
                 .isTrue();
 
+        boolean areProductPricesGreaterThatZero = mainPage.arePopularProductsPriceBiggerThanZero();
 
-        List<String> actualPopularProductPriceBiggerThanZero =
-                mainPage.arePopularProductsPriceBiggerThanZero();
-
-        sa.assertThat(actualPopularProductPriceBiggerThanZero)
+        sa.assertThat(areProductPricesGreaterThatZero)
                 .as("Some popular product prices are >= 0.00")
-                .isNotNull();
+                .isTrue();
 
         sa.assertAll();
     }

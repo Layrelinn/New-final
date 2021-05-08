@@ -42,7 +42,7 @@ public class MainPage extends BasePage {
     private List<WebElement> artSubCategories;
 
     @FindBy(xpath = "//div[@class='products row']//div[@class='product']")
-    private List<WebElement> popularProductsList;
+    private List<WebElement> popularProductsContainers;
 
     @FindBy(xpath = "//div[@class='products row']//a[@itemprop='url']")
     private List<WebElement> popularProductsName;
@@ -166,40 +166,32 @@ public class MainPage extends BasePage {
     }
 
     public int getPopularProductsSize() {
-        return popularProductsList.size();
-    }
-
-    public boolean havePopularProductsNameFields() {
-        List<String> names = new ArrayList<>();
-        for (WebElement e : popularProductsName) {
-            names.add(e.getText());
-        }
-        return names.size() == popularProductsList.size();
-    }
-
-    public boolean havePopularProductsPriceFields() {
-        List<String> prices = new ArrayList<>();
-        for (WebElement e : popularProductsName) {
-            prices.add(e.getText());
-        }
-        return prices.size() == popularProductsList.size();
-    }
-
-    public List<String> arePopularProductsPriceBiggerThanZero() {
-        List<String> prices = new ArrayList<>();
-        for (WebElement e : popularProductsName) {
-            prices.add(e.getText());
-        }
-        return prices;
-
-    }
-
-
-    //for popular products
-
-    public List<String> getAllNamesFromProducts() {
         Product product = new Product();
-        product.getAllPopularProducts(containers);
+        int productsOnPage = product.getCountOfAllPopularProducts(popularProductsContainers);
+        return productsOnPage;
+    }
+
+    public List<Product> getAllPopularProducts() {
+        Product product = new Product();
+        List<Product> allProductsOnMainPage = product.getAllPopularProducts(popularProductsContainers);
+        return allProductsOnMainPage;
+    }
+
+    public boolean isEveryProductHasName () {
+        Product product = new Product();
+          return product.productNameWE.isDisplayed();
+
+    }
+
+    public boolean isEveryProductHasPrice () {
+        Product product = new Product();
+        return product.productPriceWE.isDisplayed();
+    }
+
+    public boolean arePopularProductsPriceBiggerThanZero() {
+        Product product = new Product();
+        double zero = 0.00;
+        return product.regularPrice > zero;
     }
 
 }
