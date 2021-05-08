@@ -1,7 +1,9 @@
+import blocks.Product;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import pages.MainPage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CheckPopularProductsTest extends BaseTest {
@@ -12,9 +14,11 @@ public class CheckPopularProductsTest extends BaseTest {
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
-        Integer actualPopularProductsSize =
+        //TODO use priimitives instead of objects
+        int actualPopularProductsSize =
                 mainPage.goToFrame()
                         .getPopularProductsSize();
+
 
         sa.assertThat(actualPopularProductsSize)
                 .as("Popular products size is not 8!")
@@ -23,6 +27,8 @@ public class CheckPopularProductsTest extends BaseTest {
 
         Boolean actualPopularProductsName =
                 mainPage.havePopularProductsNameFields();
+
+
 
         sa.assertThat(actualPopularProductsName)
                 .as("Not all popular products has names!")

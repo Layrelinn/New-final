@@ -7,16 +7,18 @@ public class CheckCategoriesTest extends BaseTest {
     @Test
     public void checkCategories() {
 
+        //TODO add switch case and remove duplicate methods and locators
+
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
-        boolean actualMenCategoryIsDisplaying =
+        boolean actualMenCategoryIsDisplaying = //TODO is at start
                 mainPage.goToFrame()
-                        .hoverOverClothesLink()
-                        .isMenCategoryAppears();
+                        .hoverOverLink("MAN")
+                        .isMenCategoryAppears(); //TODO rename to isCategoryAppear("MAN")
 
         boolean actualWomenCategoryIsDisplaying =
-                mainPage.hoverOverClothesLink()
+                mainPage.hoverOverLink("WONAM")
                         .isWomenCategoryAppears();
 
         sa.assertThat(actualMenCategoryIsDisplaying)

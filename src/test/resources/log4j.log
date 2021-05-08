@@ -293,3 +293,16 @@
 [INFO ] 2021-05-04 21:40:16 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
 [INFO ] 2021-05-04 21:40:16 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
 [INFO ] 2021-05-04 21:40:24 MainPage:86 :goToFrame - message:Switching to the separate page frame
+[INFO ] 2021-05-07 18:37:38 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-07 18:37:38 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-07 18:37:48 MainPage:85 :goToFrame - message:Switching to the separate page frame
+[INFO ] 2021-05-07 18:37:54 MainPage:115 :clickOnLanguagesDropdown - message:Clicking on the languages dropdown to open the list
+[INFO ] 2021-05-07 18:37:56 MainPage:121 :getAllLanguagesCountFromDropdown - message:Getting size of the list of languages from the dropdown
+[INFO ] 2021-05-07 18:37:59 MainPage:127 :findLanguages - message:Checking the list on presence of the specific language
+[ERROR] 2021-05-07 18:38:02 AllureLifecycle:609 :prepareAttachment - message:Could not add attachment: no test is running
+[INFO ] 2021-05-07 18:42:03 WebDriverManager:625 :resolveDriverVersion - message:Using chromedriver 90.0.4430.24 (resolved driver for Chrome 90)
+[INFO ] 2021-05-07 18:42:03 WebDriverManager:682 :exportDriver - message:Exporting webdriver.chrome.driver as C:\Users\rovin\.cache\selenium\chromedriver\win32\90.0.4430.24\chromedriver.exe
+[INFO ] 2021-05-07 18:42:11 MainPage:85 :goToFrame - message:Switching to the separate page frame
+[INFO ] 2021-05-07 18:42:17 MainPage:115 :clickOnLanguagesDropdown - message:Clicking on the languages dropdown to open the list
+[INFO ] 2021-05-07 18:42:18 MainPage:121 :getAllLanguagesCountFromDropdown - message:Getting size of the list of languages from the dropdown
+[INFO ] 2021-05-07 18:42:20 MainPage:127 :findLanguages - message:Checking the list on presence of the specific language

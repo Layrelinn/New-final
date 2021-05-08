@@ -10,7 +10,7 @@ public class RegistrationNegativeScenarioTest extends BaseTest {
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
-        String validationFieldHighlight =
+        String validationFieldHighlight = //TODO rename
                 mainPage.goToFrame()
                         .clickOnSignInButton()
                         .clickOnCreateAccountLink()
@@ -23,13 +23,13 @@ public class RegistrationNegativeScenarioTest extends BaseTest {
                         .selectAgreeWithPrivacyPolicyCheckbox()
                         .selectCustomerDataPrivacyCheckbox()
                         .clickOnSaveButtonWithInvalidData()
-                        .firstNameBorderHighlight();
+                        .firstNameBorderHighlight(); // TODO RENAME
 
         sa.assertThat(validationFieldHighlight)
                 .as("The highlighted color of the frame is not red")
                 .isEqualTo("rgba(255, 76, 76, 1)");
 
-
+//TODO dont do the same actions. REMOVE
         String validationMessageText =
                 mainPage.clickOnSignInButton()
                         .clickOnCreateAccountLink()

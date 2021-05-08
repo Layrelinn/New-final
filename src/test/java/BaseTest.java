@@ -1,4 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -13,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static pages.BasePage.getDriver;
 
-public class BaseTest {
+public abstract class BaseTest {
 
     WebDriver driver;
 

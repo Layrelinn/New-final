@@ -16,14 +16,13 @@ public class CheckLanguagesTest extends BaseTest {
         int actualLanguagesCount =
                 mainPage.goToFrame()
                         .clickOnLanguagesDropdown()
-                        .getAllLanguagesCountFromDropdown();
+                        .getAllLanguagesCountFromDropdown(); //TODO rename
 
         sa.assertThat(actualLanguagesCount)
                 .as("The count of the languages did not matched with expected")
                 .isEqualTo(44);
 
-        List<String> languagesInTheDropdown =
-                mainPage.findLanguages();
+        List<String> languagesInTheDropdown = mainPage.findLanguages();
 
         sa.assertThat(languagesInTheDropdown)
                 .as("Ukrainian not found!")

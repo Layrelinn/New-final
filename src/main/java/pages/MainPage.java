@@ -1,6 +1,8 @@
 package pages;
 
+import blocks.Product;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -150,6 +152,22 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    public MainPage hoverOverLink(String linkName) {
+        String categoryId = null;
+        switch (linkName) {
+            case "MAN":
+                categoryId = "1";
+                break;
+            case "WOMAN":
+                categoryId = "2";
+                break;
+        }
+        String baseXpath = "//li[@id='category-" + categoryId + "']";
+        actions.moveToElement(getDriver().findElement(By.xpath(baseXpath))).build().perform();
+        return this;
+    }
+
+
     public boolean isMenCategoryAppears() {
         return menCategory.isDisplayed();
     }
@@ -180,7 +198,7 @@ public class MainPage extends BasePage {
         return artSubCategories.size() != 0;
     }
 
-    public Integer getPopularProductsSize() {
+    public int getPopularProductsSize() {
         return popularProductsList.size();
     }
 
@@ -207,6 +225,14 @@ public class MainPage extends BasePage {
         }
         return prices;
 
+    }
+
+
+    //for popular products
+
+    public List<String> getAllNamesFromProducst(){
+        Product product = new Product();
+        product.getAllPopularProducts(containers);
     }
 
 }

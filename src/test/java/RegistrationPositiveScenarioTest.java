@@ -10,13 +10,16 @@ public class RegistrationPositiveScenarioTest extends BaseTest {
 
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
+        //TODO every method should get parameters
+        String name = "Lika";
+        String lastName = "123123";
 
         String actualUserName =
                 mainPage.goToFrame()
                         .clickOnSignInButton()
                         .clickOnCreateAccountLink()
                         .clickOnSocialTitleRadioButton()
-                        .enterFirstName()
+                        .enterFirstName(name)
                         .enterLastName()
                         .enterEmailAddress()
                         .enterPassword()
@@ -24,11 +27,11 @@ public class RegistrationPositiveScenarioTest extends BaseTest {
                         .selectAgreeWithPrivacyPolicyCheckbox()
                         .selectCustomerDataPrivacyCheckbox()
                         .clickOnSaveButton()
-                        .getUserName();
+                        .getUserName(); //TODO rename
 
         Assertions.assertThat(actualUserName)
                 .as("Name of the user is not displaying near card button")
-                .isEqualTo("Lika Rovinska");
+                .isEqualTo("Lika Rovinska"); //TODO get data from variables above
 
     }
 }
