@@ -1,5 +1,7 @@
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
+import pages.CreateAnAccountPage;
+import pages.LogInPage;
 import pages.MainPage;
 
 public class RegistrationNegativeScenarioTest extends BaseTest {
@@ -16,7 +18,7 @@ public class RegistrationNegativeScenarioTest extends BaseTest {
         String password = "test123";
         String birthdayDate = "08/7/1997";
 
-        String validationFieldColor =
+        CreateAnAccountPage createAnAccountPage =
                 mainPage.clickOnSignInButton()
                         .clickOnCreateAccountLink()
                         .clickOnSocialTitleRadioButton()
@@ -27,28 +29,14 @@ public class RegistrationNegativeScenarioTest extends BaseTest {
                         .enterBirthdayDate(birthdayDate)
                         .selectAgreeWithPrivacyPolicyCheckbox()
                         .selectCustomerDataPrivacyCheckbox()
-                        .clickOnSaveButtonWithInvalidData()
-                        .firstNameFieldBorderColor();
+                        .clickOnSaveButtonWithInvalidData();
+
+        String validationFieldColor = createAnAccountPage.firstNameFieldBorderColor();
+        String validationMessageText = createAnAccountPage.getValidationMessageText();
 
         sa.assertThat(validationFieldColor)
                 .as("The highlighted color of the frame is not red")
                 .isEqualTo("rgba(255, 76, 76, 1)");
-
-//TODO dont do the same actions. REMOVE
-        String validationMessageText =
-                mainPage.clickOnSignInButton()
-                        .clickOnCreateAccountLink()
-                        .clickOnSocialTitleRadioButton()
-                        .enterInvalidFirstName(invalidFirstName)
-                        .enterLastName(lastName)
-                        .enterEmailAddress(emailAddress)
-                        .enterPassword(password)
-                        .enterBirthdayDate(birthdayDate)
-                        .selectAgreeWithPrivacyPolicyCheckbox()
-                        .selectCustomerDataPrivacyCheckbox()
-                        .clickOnSaveButtonWithInvalidData()
-                        .getValidationMessageText();
-
         sa.assertThat(validationMessageText)
                 .as("The pop-up error message doesn't match with expected")
                 .isEqualTo("Invalid format.");
