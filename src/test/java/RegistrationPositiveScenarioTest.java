@@ -1,5 +1,4 @@
 import org.assertj.core.api.Assertions;
-import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import pages.MainPage;
 
@@ -9,29 +8,30 @@ public class RegistrationPositiveScenarioTest extends BaseTest {
     public void registrationWithValidData() {
 
         MainPage mainPage = new MainPage();
-        SoftAssertions sa = new SoftAssertions();
-        //TODO every method should get parameters
-        String name = "Lika";
-        String lastName = "123123";
+
+        String firstName = "Lika";
+        String lastName = "Rovinska";
+        String emailAddress = "test2@gmail.com";
+        String password = "test123";
+        String birthdayDate = "08/7/1997";
 
         String actualUserName =
-                mainPage.goToFrame()
-                        .clickOnSignInButton()
+                mainPage.clickOnSignInButton()
                         .clickOnCreateAccountLink()
                         .clickOnSocialTitleRadioButton()
-                        .enterFirstName()
-                        .enterLastName()
-                        .enterEmailAddress()
-                        .enterPassword()
-                        .enterBirthdayDate()
+                        .enterFirstName(firstName)
+                        .enterLastName(lastName)
+                        .enterEmailAddress(emailAddress)
+                        .enterPassword(password)
+                        .enterBirthdayDate(birthdayDate)
                         .selectAgreeWithPrivacyPolicyCheckbox()
                         .selectCustomerDataPrivacyCheckbox()
                         .clickOnSaveButton()
-                        .getUserName(); //TODO rename
+                        .getUserNameFromNavigationBar();
 
         Assertions.assertThat(actualUserName)
                 .as("Name of the user is not displaying near card button")
-                .isEqualTo("Lika Rovinska"); //TODO get data from variables above
+                .isEqualTo(firstName + " " + lastName);
 
     }
 }

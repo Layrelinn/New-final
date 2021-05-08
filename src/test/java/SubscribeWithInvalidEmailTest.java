@@ -5,11 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SubscribeWithInvalidEmailTest extends BaseTest {
 
-    //TODO remove InterruptedException DONE
-    // TODO move goToFrame to Base Test DONE
-
     @Test
-    public void subscribeWithInvalidEmail()  {
+    public void subscribeWithInvalidEmail() {
 
         MainPage mainPage = new MainPage();
         String emailAddressForSubscribe = "ttt@ttt";

@@ -14,12 +14,11 @@ public class CheckLanguagesTest extends BaseTest {
         SoftAssertions sa = new SoftAssertions();
 
         int actualLanguagesCount =
-                mainPage.goToFrame()
-                        .clickOnLanguagesDropdown()
-                        .getAllLanguagesCountFromDropdown(); //TODO rename
+                mainPage.clickOnLanguagesDropdown()
+                        .getCountOfAllLanguagesFromDropdown();
 
         sa.assertThat(actualLanguagesCount)
-                .as("The count of the languages did not matched with expected")
+                .as("The count of the languages in dropdown did not matched with expected")
                 .isEqualTo(44);
 
         List<String> languagesInTheDropdown = mainPage.findLanguages();

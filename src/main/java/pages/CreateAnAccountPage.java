@@ -46,39 +46,39 @@ public class CreateAnAccountPage extends BasePage {
         return this;
     }
 
-    public CreateAnAccountPage enterFirstName() {
+    public CreateAnAccountPage enterFirstName(String name) {
         firstNameInput.click();
-        firstNameInput.sendKeys("Lika");
+        firstNameInput.sendKeys();
         return this;
     }
 
-    public CreateAnAccountPage enterInvalidFirstName() {
+    public CreateAnAccountPage enterInvalidFirstName(String invalidFirstName) {
         firstNameInput.click();
-        firstNameInput.sendKeys("James8");
+        firstNameInput.sendKeys();
         return this;
     }
 
-    public CreateAnAccountPage enterLastName() {
+    public CreateAnAccountPage enterLastName(String lastName) {
         lastNameInput.click();
-        lastNameInput.sendKeys("Rovinska");
+        lastNameInput.sendKeys();
         return this;
     }
 
-    public CreateAnAccountPage enterEmailAddress() {
+    public CreateAnAccountPage enterEmailAddress(String emailAddress) {
         emailAddressInput.click();
-        emailAddressInput.sendKeys("test2@gmail.com");
+        emailAddressInput.sendKeys();
         return this;
     }
 
-    public CreateAnAccountPage enterPassword() {
+    public CreateAnAccountPage enterPassword(String password) {
         passwordInput.click();
-        passwordInput.sendKeys("test123");
+        passwordInput.sendKeys();
         return this;
     }
 
-    public CreateAnAccountPage enterBirthdayDate() {
+    public CreateAnAccountPage enterBirthdayDate(String birthdayDate) {
         birthdayDateInput.click();
-        birthdayDateInput.sendKeys("08/7/1997");
+        birthdayDateInput.sendKeys();
         return this;
     }
 
@@ -102,7 +102,7 @@ public class CreateAnAccountPage extends BasePage {
         return this;
     }
     
-    public String firstNameBorderHighlight() {
+    public String firstNameFieldBorderColor() {
         return firstNameInput.getCssValue("outline-color");
     }
 

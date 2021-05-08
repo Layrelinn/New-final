@@ -38,27 +38,6 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//div[@id='_desktop_user_info']//span[@class='hidden-sm-down']")
     private WebElement userName;
 
-    @FindBy(xpath = "//li[@id='category-3']")
-    private WebElement clothesMenu;
-
-    @FindBy(xpath = "//li[@id='category-4']")
-    private WebElement menCategory;
-
-    @FindBy(xpath = "//li[@id='category-5']")
-    private WebElement womenCategory;
-
-    @FindBy(xpath = "//li[@id='category-6']")
-    private WebElement accessoriesMenu;
-
-    @FindBy(xpath = "//li[@id='category-7']")
-    private WebElement stationeryCategory;
-
-    @FindBy(xpath = "//li[@id='category-8']")
-    private WebElement homeAccessoriesCategory;
-
-    @FindBy(xpath = "//li[@id='category-9']")
-    private WebElement artMenu;
-
     @FindBy(xpath = "//li[@id='category-9']//li")
     private List<WebElement> artSubCategories;
 
@@ -84,12 +63,6 @@ public class MainPage extends BasePage {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        return this;
-    }
-
-    public MainPage goToFrame() {
-        log.info("Switching to the separate page frame");
-        getDriver().switchTo().frame("framelive");
         return this;
     }
 
@@ -123,7 +96,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public Integer getAllLanguagesCountFromDropdown() {
+    public Integer getCountOfAllLanguagesFromDropdown() {
         log.info("Getting size of the list of languages from the dropdown");
         return listOfLanguagesInDropdown.size();
 
@@ -131,11 +104,11 @@ public class MainPage extends BasePage {
 
     public List<String> findLanguages() {
         log.info("Checking the list on presence of the specific language");
-        List<String> presenceLanguage = new ArrayList<>();
+        List<String> presenceOfLanguage = new ArrayList<>();
         for (WebElement language : listOfLanguagesInDropdown) {
-            presenceLanguage.add(language.getText());
+            presenceOfLanguage.add(language.getText());
         }
-        return presenceLanguage;
+        return presenceOfLanguage;
     }
 
     public LogInPage clickOnSignInButton() {
@@ -144,26 +117,23 @@ public class MainPage extends BasePage {
         return new LogInPage();
     }
 
-    public String getUserName() {
+    public String getUserNameFromNavigationBar() {
         return userName.getText();
     }
 
-
     Actions actions = new Actions(getDriver());
 
-    public MainPage hoverOverClothesLink() {
-        actions.moveToElement(clothesMenu).build().perform();
-        return this;
-    }
-
-    public MainPage hoverOverLink(String linkName) {
+    public MainPage hoverOverTopMenuLinks(String linkName) {
         String categoryId = null;
         switch (linkName) {
-            case "MAN":
-                categoryId = "1";
+            case "CLOTHES":
+                categoryId = "3";
                 break;
-            case "WOMAN":
-                categoryId = "2";
+            case "ACCESSORIES":
+                categoryId = "6";
+                break;
+            case "ART":
+                categoryId = "9";
                 break;
         }
         String baseXpath = "//li[@id='category-" + categoryId + "']";
@@ -171,31 +141,24 @@ public class MainPage extends BasePage {
         return this;
     }
 
-
-    public boolean isMenCategoryAppears() {
-        return menCategory.isDisplayed();
-    }
-
-    public boolean isWomenCategoryAppears() {
-        return womenCategory.isDisplayed();
-    }
-
-    public MainPage hoverOverAccessoriesMenu() {
-        actions.moveToElement(accessoriesMenu).build().perform();
-        return this;
-    }
-
-    public boolean isStationeryCategoryAppears() {
-        return stationeryCategory.isDisplayed();
-    }
-
-    public boolean isHomeAccessoriesCategoryAppears() {
-        return homeAccessoriesCategory.isDisplayed();
-    }
-
-    public MainPage hoverOverArtMenu() {
-        actions.moveToElement(artMenu).build().perform();
-        return this;
+    public boolean isCategoryDisplaying (String linkName) {
+        String categoryId = null;
+        switch (linkName) {
+            case "MEN":
+                categoryId = "4";
+                break;
+            case "WOMEN":
+                categoryId = "5";
+                break;
+            case "STATIONERY":
+                categoryId = "7";
+                break;
+            case "HOME_ACCESSORIES":
+                categoryId = "8";
+                break;
+        }
+        String baseXpath = "//li[@id='category-" + categoryId + "']";
+        return getDriver().findElement(By.xpath(baseXpath)).isDisplayed();
     }
 
     public boolean isAnySubCategoriesAppears() {

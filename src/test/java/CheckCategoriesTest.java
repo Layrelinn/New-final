@@ -12,49 +12,45 @@ public class CheckCategoriesTest extends BaseTest {
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
-        boolean actualMenCategoryIsDisplaying = //TODO is at start
-                mainPage.goToFrame()
-                        .hoverOverLink("MAN")
-                        .isMenCategoryAppears(); //TODO rename to isCategoryAppear("MAN")
+        boolean isMenCategoryDisplaying =
+                mainPage.hoverOverTopMenuLinks("CLOTHES")
+                        .isCategoryDisplaying("MEN");
 
-        boolean actualWomenCategoryIsDisplaying =
-                mainPage.hoverOverLink("WONAM")
-                        .isWomenCategoryAppears();
+        boolean isWomenCategoryDisplaying =
+                mainPage.hoverOverTopMenuLinks("CLOTHES")
+                        .isCategoryDisplaying("WOMEN");
 
-        sa.assertThat(actualMenCategoryIsDisplaying)
+        sa.assertThat(isMenCategoryDisplaying)
                 .as("The Men subcategory is not displaying!")
                 .isTrue();
-        sa.assertThat(actualWomenCategoryIsDisplaying)
+        sa.assertThat(isWomenCategoryDisplaying)
                 .as("The Women subcategory is not displaying!")
                 .isTrue();
 
+        boolean isStationeryCategoryDisplaying =
+                mainPage.hoverOverTopMenuLinks("ACCESSORIES")
+                        .isCategoryDisplaying("STATIONERY");
 
-        boolean actualStationeryCategoryIsDisplaying =
-                mainPage.hoverOverAccessoriesMenu()
-                        .isStationeryCategoryAppears();
+        boolean isHomeAccessoriesCategoryDisplaying =
+                mainPage.hoverOverTopMenuLinks("ACCESSORIES")
+                        .isCategoryDisplaying("HOME_ACCESSORIES");
 
-        boolean actualHomeAccessoriesCategoryIsDisplaying =
-                mainPage.hoverOverAccessoriesMenu()
-                        .isHomeAccessoriesCategoryAppears();
-
-        sa.assertThat(actualStationeryCategoryIsDisplaying)
+        sa.assertThat(isStationeryCategoryDisplaying)
                 .as("The Stationery subcategory is not displaying!")
                 .isTrue();
-        sa.assertThat(actualHomeAccessoriesCategoryIsDisplaying)
+        sa.assertThat(isHomeAccessoriesCategoryDisplaying)
                 .as("The Home Accessories subcategory is not displaying!")
                 .isTrue();
 
-
-        boolean actualArtCategoriesIsDisplaying =
-                mainPage.hoverOverArtMenu()
+        boolean isArtCategoriesDisplaying =
+                mainPage.hoverOverTopMenuLinks("ART")
                         .isAnySubCategoriesAppears();
 
-        sa.assertThat(actualArtCategoriesIsDisplaying)
+        sa.assertThat(isArtCategoriesDisplaying)
                 .as("There are some subcategories under the Art menu!")
                 .isFalse();
 
         sa.assertAll();
 
     }
-
 }

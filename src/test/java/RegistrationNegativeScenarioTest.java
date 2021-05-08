@@ -10,22 +10,27 @@ public class RegistrationNegativeScenarioTest extends BaseTest {
         MainPage mainPage = new MainPage();
         SoftAssertions sa = new SoftAssertions();
 
-        String validationFieldHighlight = //TODO rename
-                mainPage.goToFrame()
-                        .clickOnSignInButton()
+        String invalidFirstName = "James8";
+        String lastName = "Rovinska";
+        String emailAddress = "test2@gmail.com";
+        String password = "test123";
+        String birthdayDate = "08/7/1997";
+
+        String validationFieldColor =
+                mainPage.clickOnSignInButton()
                         .clickOnCreateAccountLink()
                         .clickOnSocialTitleRadioButton()
-                        .enterInvalidFirstName()
-                        .enterLastName()
-                        .enterEmailAddress()
-                        .enterPassword()
-                        .enterBirthdayDate()
+                        .enterInvalidFirstName(invalidFirstName)
+                        .enterLastName(lastName)
+                        .enterEmailAddress(emailAddress)
+                        .enterPassword(password)
+                        .enterBirthdayDate(birthdayDate)
                         .selectAgreeWithPrivacyPolicyCheckbox()
                         .selectCustomerDataPrivacyCheckbox()
                         .clickOnSaveButtonWithInvalidData()
-                        .firstNameBorderHighlight(); // TODO RENAME
+                        .firstNameFieldBorderColor();
 
-        sa.assertThat(validationFieldHighlight)
+        sa.assertThat(validationFieldColor)
                 .as("The highlighted color of the frame is not red")
                 .isEqualTo("rgba(255, 76, 76, 1)");
 
@@ -34,11 +39,11 @@ public class RegistrationNegativeScenarioTest extends BaseTest {
                 mainPage.clickOnSignInButton()
                         .clickOnCreateAccountLink()
                         .clickOnSocialTitleRadioButton()
-                        .enterInvalidFirstName()
-                        .enterLastName()
-                        .enterEmailAddress()
-                        .enterPassword()
-                        .enterBirthdayDate()
+                        .enterInvalidFirstName(invalidFirstName)
+                        .enterLastName(lastName)
+                        .enterEmailAddress(emailAddress)
+                        .enterPassword(password)
+                        .enterBirthdayDate(birthdayDate)
                         .selectAgreeWithPrivacyPolicyCheckbox()
                         .selectCustomerDataPrivacyCheckbox()
                         .clickOnSaveButtonWithInvalidData()
